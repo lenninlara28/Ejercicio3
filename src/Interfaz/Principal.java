@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hp 14
@@ -46,6 +48,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Digite Su Saldo Inicial : ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        TxtSaldoini.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtSaldoiniKeyTyped(evt);
+            }
+        });
         jPanel1.add(TxtSaldoini, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 60, 110, -1));
 
         cmdHacer.setBackground(new java.awt.Color(0, 0, 0));
@@ -83,12 +91,25 @@ public class Principal extends javax.swing.JFrame {
     private void cmdHacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdHacerActionPerformed
         String SaldoF;
         double saldoi;
+        
+        if (TxtSaldoini.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Digite Su Saldo Inicial","error", JOptionPane.ERROR_MESSAGE);
+         TxtSaldoini.requestFocusInWindow();}
+        else{
+        
         saldoi=Double.parseDouble(TxtSaldoini.getText());
         double saldof=saldoi+((saldoi*1.5)/100);
         SaldoF=String.valueOf(saldof);
      TxtSaldofinal.setText(SaldoF);
-     
+        }
     }//GEN-LAST:event_cmdHacerActionPerformed
+
+    private void TxtSaldoiniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtSaldoiniKeyTyped
+        char c=evt.getKeyChar(); 
+          if(Character.isLetter(c)) { 
+              getToolkit().beep(); 
+              evt.consume();}
+    }//GEN-LAST:event_TxtSaldoiniKeyTyped
 
     /**
      * @param args the command line arguments

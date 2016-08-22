@@ -27,21 +27,68 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        TxtSaldoini = new javax.swing.JTextField();
+        cmdHacer = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        TxtSaldofinal = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("Monto Por Ahorradores");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setText("Digite Su Saldo Inicial : ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jPanel1.add(TxtSaldoini, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 60, 110, -1));
+
+        cmdHacer.setBackground(new java.awt.Color(0, 0, 0));
+        cmdHacer.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        cmdHacer.setForeground(new java.awt.Color(255, 255, 255));
+        cmdHacer.setText("Consultar");
+        cmdHacer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdHacerActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdHacer, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel3.setText("Su Saldo Final Es: ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+
+        TxtSaldofinal.setEditable(false);
+        jPanel1.add(TxtSaldofinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdHacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdHacerActionPerformed
+        String SaldoF;
+        double saldoi;
+        saldoi=Double.parseDouble(TxtSaldoini.getText());
+        double saldof=saldoi+((saldoi*1.5)/100);
+        SaldoF=String.valueOf(saldof);
+     TxtSaldofinal.setText(SaldoF);
+     
+    }//GEN-LAST:event_cmdHacerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +126,12 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TxtSaldofinal;
+    private javax.swing.JTextField TxtSaldoini;
+    private javax.swing.JButton cmdHacer;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

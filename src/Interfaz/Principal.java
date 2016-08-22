@@ -36,6 +36,7 @@ public class Principal extends javax.swing.JFrame {
         cmdHacer = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         TxtSaldofinal = new javax.swing.JTextField();
+        cmdNuevo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,6 +75,16 @@ public class Principal extends javax.swing.JFrame {
         TxtSaldofinal.setEditable(false);
         jPanel1.add(TxtSaldofinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 130, -1));
 
+        cmdNuevo.setBackground(new java.awt.Color(0, 0, 0));
+        cmdNuevo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        cmdNuevo.setText("Nueva Consulta");
+        cmdNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdNuevoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,6 +121,12 @@ public class Principal extends javax.swing.JFrame {
               getToolkit().beep(); 
               evt.consume();}
     }//GEN-LAST:event_TxtSaldoiniKeyTyped
+
+    private void cmdNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdNuevoActionPerformed
+       TxtSaldoini.setText("");
+       TxtSaldofinal.setText("");
+       TxtSaldoini.requestFocusInWindow();
+    }//GEN-LAST:event_cmdNuevoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,6 +167,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField TxtSaldofinal;
     private javax.swing.JTextField TxtSaldoini;
     private javax.swing.JButton cmdHacer;
+    private javax.swing.JButton cmdNuevo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
